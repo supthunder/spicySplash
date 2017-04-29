@@ -1,4 +1,4 @@
 # splashManual
 Opens a bunch of browsers
 
-(!)[/images/splashcomp.gif]
+![lol](/images/splashcomp.gif)
