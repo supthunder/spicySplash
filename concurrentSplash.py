@@ -1,9 +1,7 @@
 from selenium import webdriver
 import concurrent.futures
 
-DRIVERS = []
-def multi_splash(item, etc):
-	global DRIVERS
+def multi_splash(item, DRIVERS, etc):
 	link = "http://www.adidas.com/us/apps/yeezy5av"
 	driver = webdriver.Firefox()
 	driver.set_window_size(500,250)
@@ -11,14 +9,14 @@ def multi_splash(item, etc):
 	DRIVERS.append(driver)
 
 def main():
-	global DRIVERS
+	DRIVERS = []
 	accounts = int(input("how many? "))
 	items = [0]*accounts
 	position = [0,0]
 	count = 0
-	with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
+	with concurrent.futures.ThreadPoolExecutor(max_workers=accounts) as executor:
 		for item in items:
-			executor.submit(multi_splash, item,60)
+			executor.submit(multi_splash, item, DRIVERS,60)
 
 	for driver in DRIVERS:
 		if count == 1000:
