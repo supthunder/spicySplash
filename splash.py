@@ -12,7 +12,8 @@ def main():
 			count = 0
 			position[0] += 500
 
-		driver = webdriver.Firefox()
+		driver = webdriver.Chrome(executable_path="driver/chromedriver")
+
 		driver.set_window_size(500,250)
 		driver.get(link)
 		DRIVERS.append(driver)
