@@ -3,7 +3,6 @@ import concurrent.futures
 
 def multi_splash(item, DRIVERS, etc):
 	link = "http://www.adidas.com/us/apps/yeezy5av"
-	link = "https://www.google.com"
 	driver = webdriver.Chrome(executable_path="drivers/chromedriver") #.exe if windows
 	driver.set_window_size(500,250)
 	driver.get(link)
